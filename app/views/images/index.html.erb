@@ -1,0 +1,20 @@
+<p>
+  <%= form_for Image.new, url: images_path, authenticity_token: true, remote: true do |f| %>
+    <div class="hide">
+      <%= f.file_field :file, label: false, as: :file %>
+    </div>
+
+    <div class="dropzone dz-clickable form-group" id="imageDropzone">
+      <div class="dz-default dz-message">
+        <span><strong><%= t('helpers.input.drag&drop') %></strong></span>
+      </div>
+    </div>
+    <%= f.submit t('helpers.button.save'), class: 'btn btn-primary btn-block' %>
+  <% end %>
+</p>
+
+<hr>
+
+<div id="user-images">
+  <%= render @images %>
+</div>

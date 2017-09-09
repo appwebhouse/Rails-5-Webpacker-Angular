@@ -1,0 +1,13 @@
+<div class="col-4 mx-auto">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'm-t' }) do |f| %>
+    <div class="form-group">
+      <%= f.text_field :email, label: false, placeholder: t('activerecord.attributes.user.email'), class: 'form-control', required: true, autofocus: true, wrapper: false %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password, label: false, placeholder: t('activerecord.attributes.user.password'), class: 'form-control', required: true, wrapper: false %>
+    </div>
+
+    <%= f.submit t('helpers.button.register'), class: 'btn btn-primary btn-block' %>
+  <% end %>
+</div>
