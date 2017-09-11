@@ -44,4 +44,5 @@ RSpec.configure do |config|
   end
 
   config.include ApplicationHelper
+  config.include ApiHelpers, type: :controller
 end

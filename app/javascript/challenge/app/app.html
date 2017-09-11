@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills float-right">
+        <li *ngIf="!user" class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="!user" class="nav-item">
+          <a class="nav-link" routerLink="/register">Register</a>
+        </li>
+        <li *ngIf="user" class="nav-item">
+          <a class="nav-link" (click)="logout()" href="/">Log out</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <footer class="footer">
+    <p>© Company 2017</p>
+  </footer>
+</div>

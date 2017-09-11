@@ -1,10 +1,6 @@
 ---
 en:
   activerecord:
-    attributes:
-      user:
-        email: 'Email'
-        password: 'Password'
     errors:
       messages:
         record_invalid: "Validation failed: %{errors}"
@@ -149,11 +145,11 @@ en:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
   helpers:
-    select:
-      prompt: Please select
     input:
       drag&drop: Drag & Drop file or click to select file.
       added: "File added: %{name}"
+    select:
+      prompt: Please select
     submit:
       create: Create %{model}
       submit: Save %{model}

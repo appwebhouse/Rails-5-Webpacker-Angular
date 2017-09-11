@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users, only: [:sessions, :registrations]
-  resources :images, only: [:index, :create]
-
-  authenticated :user do
-    root to: 'images#index'
+  namespace :api, defaults: { format: :json } do
+    namespace :users do
+      devise_scope :user do
+        resource :sessions, only: [:create, :destroy]
+        resource :registrations, only: :create
+      end
+      resources :users, only: [], path: '' do
+        resources :images, only: [:index, :create], on: :member
+      end
+    end
   end
 
-  devise_scope :user do
-    root to: 'devise/sessions#new'
-  end
+  root to: 'pages#index'
 end

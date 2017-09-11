@@ -1,5 +1,0 @@
-<% unless @image.errors.any? %>
-  $('#user-images').append("<%= j render 'images/image', image: @image %>");
-  $('.dz-message').html("<span><strong><%= t('helpers.input.drag&drop') %></strong></span>");
-  $("#new_image").get(0).reset();
-<% end %>

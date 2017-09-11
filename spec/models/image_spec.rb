@@ -12,7 +12,7 @@ RSpec.describe Image, type: :model do
     end
 
     context 'is invalid' do
-      let(:image) { build(:image, file: '') }
+      let(:image) { build(:image) }
       it { expect(image).to be_invalid }
     end
   end

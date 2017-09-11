@@ -6,31 +6,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag    'application' %>
+    <base href="/">
   </head>
 
   <body>
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills float-right">
-            <li class="nav-item">
-              <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
-                <%= t('helpers.button.logout') %>
-              <% end %>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-
-      <%= yield %>
-
-      <footer class="footer">
-        <p>© Company 2017</p>
-      </footer>
-    </div>
+    <challenge-app></challenge-app>
   </body>
   <script type="text/javascript">
     I18n.locale = "<%= I18n.locale %>";
